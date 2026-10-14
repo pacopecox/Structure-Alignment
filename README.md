@@ -30,11 +30,11 @@ Structure Alignment adapts Don't Starve Together's native alignment system for s
 ### Installation
 
 1. Close Don't Starve.
-2. Create a folder named `structure-alignment` inside the game's `mods` directory.
-3. Copy the contents of `1.0-stable` into that folder. If using a package with the mod files at its root, copy those files directly. `modinfo.lua` and `modmain.lua` must be directly inside `mods/structure-alignment`, alongside `anim` and `scripts`.
+2. Download the mod ZIP from [Releases](https://github.com/pacopecox/Structure-Alignment/releases) and extract it.
+3. Copy the `structure-alignment` folder into the game's `mods` directory. Ensure `modinfo.lua`, `modmain.lua`, `anim`, and `scripts` are directly inside `mods/structure-alignment`, without another nested mod folder.
 4. Launch Don't Starve and enable **Structure Alignment** in **Mods**.
 5. Open **Configure Mod**, choose your settings, and click **Apply**.
-6. Click **Apply** on the main **Mods** screen to reload the mods with the saved settings.
+6. Click **Apply** on the main **Mods** screen to activate the mod with your saved settings.
 
 ### Controls
 
@@ -97,11 +97,11 @@ Structure Alignment adapta el sistema de alineamiento nativo de Don't Starve Tog
 ### Instalación
 
 1. Cierra Don't Starve.
-2. Crea una carpeta llamada `structure-alignment` dentro del directorio `mods` del juego.
-3. Copia el contenido de `1.0-stable` en esa carpeta. Si utilizas un paquete con los archivos del mod en la raíz, cópialos directamente. `modinfo.lua` y `modmain.lua` deben quedar directamente en `mods/structure-alignment`, junto a `anim` y `scripts`.
+2. Descarga el ZIP del mod desde [Releases](https://github.com/pacopecox/Structure-Alignment/releases) y extráelo.
+3. Copia la carpeta `structure-alignment` dentro del directorio `mods` del juego. Comprueba que `modinfo.lua`, `modmain.lua`, `anim` y `scripts` estén directamente en `mods/structure-alignment`, sin otra carpeta del mod anidada.
 4. Inicia Don't Starve y activa **Structure Alignment** en **Mods**.
 5. Abre **Configure Mod**, elige los ajustes y pulsa **Apply**.
-6. Pulsa **Apply** en la pantalla principal de **Mods** para recargar los mods con los ajustes guardados.
+6. Pulsa **Apply** en la pantalla principal de **Mods** para activar el mod con los ajustes guardados.
 
 ### Controles
 
