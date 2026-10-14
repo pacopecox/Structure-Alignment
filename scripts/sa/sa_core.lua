@@ -90,6 +90,9 @@ local function create(p)
         for z = -r, r do
             if x*x + z*z <= r*r then
                 local ent = SpawnPrefab("sa_grid_outline")
+                -- Match DS preview lighting without adding colour to the texture.
+                -- World colour cubes still apply; local lamps cannot shade a cell.
+                ent.AnimState:SetLightOverride(1)
                 ent.entity:SetParent(p.sa_parent.entity)
                 ent.Transform:SetPosition(x/i, 0, z/i)
                 ent:Hide()
@@ -170,12 +173,15 @@ local function helpers(p, dt, active, eligible)
                 local changed = not v.drawn or v.drawn_good ~= good
                 if changed then
                     v.ent.AnimState:PlayAnimation(animations[p.sa_grid] .. (good and "" or "_x"))
-                    v.ent.AnimState:SetAddColour(good == false and .75 or .25, good and .75 or .25, 0, 0)
+                    -- Tint the white textured cells without saturating them with additive colour.
+                    -- Structure previews have their own native DS colour treatment below.
+                    v.ent.AnimState:SetAddColour(0, 0, 0, 0)
                 end
-                if changed or v.drawn_opacity ~= SA.gridopacity then
-                    v.ent.AnimState:SetMultColour(good == false and 1 or 0, good and 1 or 0, 0, SA.gridopacity)
+                local opacity = SA.gridopacity
+                if changed or v.drawn_opacity ~= opacity then
+                    v.ent.AnimState:SetMultColour(good == false and 1 or 0, good and 1 or 0, 0, opacity)
                 end
-                v.drawn, v.drawn_good, v.drawn_opacity = true, good, SA.gridopacity
+                v.drawn, v.drawn_good, v.drawn_opacity = true, good, opacity
                 if not v.shown then v.ent:Show(); v.shown = true end
             elseif v.shown then v.ent:Hide(); v.shown = false end
         end
